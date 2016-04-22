@@ -23,33 +23,33 @@ public class Logger {
 		System.out.println("Before Advice...");
 	}
 
-	@After("cameraSnap()")
-	public void afterAdvice() {
-		System.out.println("After Advice...");
-	}
-
-	@AfterReturning("cameraSnap()")
-	public void afterReturningAdvice() {
-		System.out.println("After Returning Advice...");
-	}
-
-	@AfterThrowing("cameraSnap()")
-	public void afterThrowingAdvice() {
-		System.out.println("After Throwing Advice...");
-	}
-
-	@Around("cameraSnap()")
-	public void aroundAdvice(ProceedingJoinPoint p) {
-		System.out.println("Around Advice (Before)...");
-		
-		// start to check the time it took here
-		try {
-			p.proceed();
-		} catch (Throwable e) {
-			System.out.println("In Around Advice: " + e.getMessage());
-		}
-		// end check the time it took here
-		 
-		System.out.println("Around Advice (After)...");
-	}
+//	@After("cameraSnap()")
+//	public void afterAdvice() {
+//		System.out.println("After Advice...");
+//	}
+//
+//	@AfterReturning("cameraSnap()")
+//	public void afterReturningAdvice() {
+//		System.out.println("After Returning Advice...");
+//	}
+//
+//	@AfterThrowing("cameraSnap()")
+//	public void afterThrowingAdvice() {
+//		System.out.println("After Throwing Advice...");
+//	}
+//
+//	@Around("cameraSnap()")
+//	public void aroundAdvice(ProceedingJoinPoint p) {
+//		System.out.println("Around Advice (Before)...");
+//		
+//		// start to check the time it took here
+//		try {
+//			p.proceed();
+//		} catch (Throwable e) {
+//			System.out.println("In Around Advice: " + e.getMessage());
+//		}
+//		// end check the time it took here
+//		 
+//		System.out.println("Around Advice (After)...");
+//	}
 }
