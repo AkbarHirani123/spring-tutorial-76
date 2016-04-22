@@ -1,10 +1,5 @@
 package com.caveofprogramming.spring.aop;
 
-import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -14,42 +9,30 @@ import org.springframework.stereotype.Component;
 @Component
 public class Logger {
 
-	@Pointcut("execution(* com.caveofprogramming.spring.aop.Camera.snap(..))")
-	public void cameraSnap() {
+	@Pointcut("within(com.caveofprogramming.spring..*)")
+	public void withinDemo() {
+	}
+	
+	@Pointcut("target(com.caveofprogramming.spring.aop.Camera)")
+	public void targetDemo() {
+	}
+	
+	@Pointcut("this(com.caveofprogramming.spring.aop.ICamera)")
+	public void thisDemo() {
 	}
 
-	@Before("cameraSnap()")
-	public void beforeAdvice() {
+	@Before("withinDemo()")
+	public void withinDemoAdvice() {
 		System.out.println("Before Advice...");
 	}
 
-//	@After("cameraSnap()")
-//	public void afterAdvice() {
-//		System.out.println("After Advice...");
-//	}
-//
-//	@AfterReturning("cameraSnap()")
-//	public void afterReturningAdvice() {
-//		System.out.println("After Returning Advice...");
-//	}
-//
-//	@AfterThrowing("cameraSnap()")
-//	public void afterThrowingAdvice() {
-//		System.out.println("After Throwing Advice...");
-//	}
-//
-//	@Around("cameraSnap()")
-//	public void aroundAdvice(ProceedingJoinPoint p) {
-//		System.out.println("Around Advice (Before)...");
-//		
-//		// start to check the time it took here
-//		try {
-//			p.proceed();
-//		} catch (Throwable e) {
-//			System.out.println("In Around Advice: " + e.getMessage());
-//		}
-//		// end check the time it took here
-//		 
-//		System.out.println("Around Advice (After)...");
-//	}
+	@Before("targetDemo()")
+	public void targetDemoAdvice() {
+		System.out.println("target Advice...");
+	}
+	
+	@Before("thisDemo()")
+	public void thisDemoAdvice() {
+		System.out.println("this Advice...");
+	}
 }
