@@ -5,8 +5,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class Camera {
 
-	public void snap() {
-		System.out.println("Snap! \n");
+	public void snap() throws Exception{
+		System.out.println("Snap!");
+		
+		throw new Exception("Bye bye");
 	}
 	
 	public void snap(int exposure) {
