@@ -9,30 +9,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class Logger {
 
-	@Pointcut("within(com.caveofprogramming.spring..*)")
-	public void withinDemo() {
-	}
-	
-	@Pointcut("target(com.caveofprogramming.spring.aop.Camera)")
-	public void targetDemo() {
-	}
-	
-	@Pointcut("this(com.caveofprogramming.spring.aop.ICamera)")
-	public void thisDemo() {
+	@Pointcut("bean(*a*)")
+	public void somePointCut() {
 	}
 
-	@Before("withinDemo()")
+	@Before("somePointCut()")
 	public void withinDemoAdvice() {
-		System.out.println("Before Advice...");
-	}
-
-	@Before("targetDemo()")
-	public void targetDemoAdvice() {
-		System.out.println("target Advice...");
-	}
-	
-	@Before("thisDemo()")
-	public void thisDemoAdvice() {
-		System.out.println("this Advice...");
+		System.out.println("...Before Advice...");
 	}
 }

@@ -10,4 +10,6 @@ public interface ICamera {
 
 	public abstract void snapNightTime();
 
+	public abstract void snapCar(Car car);
+
 }

@@ -2,7 +2,7 @@ package com.caveofprogramming.spring.aop;
 
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("car")
 public class Car {
 
 	public void start() {
