@@ -11,6 +11,7 @@ public class Camera implements PhotoSnapper, ICamera{
 	}
 	
 	@Override
+	@Deprecated
 	public void snap(){
 		System.out.println("Snap!\n");
 	}
