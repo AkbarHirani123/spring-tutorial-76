@@ -10,17 +10,15 @@ public class App {
 				"com/caveofprogramming/spring/aop/beans.xml");
 
 		ICamera camera = (ICamera) context.getBean("camera");
-
 		camera.snap();
-		camera.snap(500);
-		camera.snap(1.8);
-		camera.snap(5,1.8);
-		camera.snapNightTime();
 
-		Car car = (Car) context.getBean("car");
+		((IMachine)camera).isMachine();
+		
+		ICar car = (ICar) context.getBean("car");
 		car.start();
 
-		camera.snapCar(new Car());
+		((IMachine)car).isMachine();
+		
 		context.close();
 	}
 

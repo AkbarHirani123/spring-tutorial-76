@@ -10,7 +10,7 @@ public interface ICamera {
 
 	public abstract void snapNightTime();
 
-	public abstract void snapCar(Car car);
+	public abstract void snapCar(ICar car);
 
 	void snap(double exposure);
 

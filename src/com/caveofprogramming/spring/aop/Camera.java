@@ -5,10 +5,6 @@ import org.springframework.stereotype.Component;
 @Component("camera")
 //@Deprecated
 public class Camera implements PhotoSnapper, ICamera{
-
-	public Camera() {
-		System.out.println("Camera constructor ran here.");
-	}
 	
 	@Override
 	@Deprecated
@@ -43,7 +39,7 @@ public class Camera implements PhotoSnapper, ICamera{
 		System.out.println("Snap! Night Mode." +"\n");
 	}
 	
-	public void snapCar(Car car){
+	public void snapCar(ICar car){
 		System.out.println("Snapping CAR!\n");
 	}
 }
